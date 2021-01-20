@@ -34,16 +34,22 @@ int main() {
 //    int sum = 12;
 //    std::vector<int> r = geeksforgeeks::subArrayGivenSum(arr, n, sum);
 
+
 //    int arr[] = {12, 8, 2, 11, 5, 14, 10};
 //    int n = 7;
 //    int r = geeksforgeeks::triplets(arr, n);
+
+
+    int arr[] = {1,2,3,-2,5};
+    int n = 5;
+    int r = geeksforgeeks::maxSubarraySum(arr, n);
 
     /***
      * String
      */
 
-    string S = "i.like.this";
-    string r = geeksforgeeks::reverseWords(S);
+//    string S = "i.like.this";
+//    string r = geeksforgeeks::reverseWords(S);
 
     std::cout << r <<std::endl;
 

@@ -1,14 +1,19 @@
 //
 // Created by zhich on 20 Jan 2021.
 //
-#include <algorithm>
 #include "geeksforgeeks.h"
 
+#include <algorithm>
+#include <bits/stdc++.h>
 #include <iostream>
 #include <vector>
 #include <string>
 
 using namespace std;
+
+/***
+ * Array
+ */
 
 int geeksforgeeks::triplets(int arr[], int n) {
     int c = 0;
@@ -55,6 +60,22 @@ vector<int> geeksforgeeks::subArrayGivenSum(int *arr, int n, int s) {
         return {-1};
     }
 }
+
+int geeksforgeeks::maxSubarraySum(int *arr, int n) {
+    int max = INT_MIN;
+    for(int i=0; i<n; i++){
+        int sum = 0;
+        for(int j=i; j<n; j++){
+            sum+=arr[j];
+            max = std::max(sum, max);
+        }
+    }
+    return max;
+}
+
+/***
+ * String
+ */
 
 string geeksforgeeks::reverseWords(string S) {
     string result;
