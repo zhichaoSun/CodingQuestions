@@ -63,12 +63,11 @@ vector<int> geeksforgeeks::subArrayGivenSum(int *arr, int n, int s) {
 
 int geeksforgeeks::maxSubarraySum(int *arr, int n) {
     int max = INT_MIN;
+    int localMax = 0;
     for(int i=0; i<n; i++){
-        int sum = 0;
-        for(int j=i; j<n; j++){
-            sum+=arr[j];
-            max = std::max(sum, max);
-        }
+        localMax += arr[i];
+        if(localMax<0) localMax=0;
+        max=std::max(max, localMax);
     }
     return max;
 }
