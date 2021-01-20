@@ -40,8 +40,8 @@ int main() {
 //    int r = geeksforgeeks::triplets(arr, n);
 
 
-    int arr[] = {-1,-2,-3,-4};
-    int n = 4;
+    int arr[] = {-2,1,-3};
+    int n = 3;
     int r = geeksforgeeks::maxSubarraySum(arr, n);
 
     /***
