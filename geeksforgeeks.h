@@ -20,6 +20,7 @@ public:
     static int missingNumber(vector<int>& array, int n);
 
     static string reverseWords(string S);
+    static void permutationsStrs();
 
 
 };

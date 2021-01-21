@@ -103,3 +103,19 @@ string geeksforgeeks::reverseWords(string S) {
     }
     return result;
 }
+
+void geeksforgeeks::permutationsStrs() {
+    int n;
+    cin>>n;
+    string s[n]={}; // the system will give a n for sure...
+    for(int i=0; i<n; i++){
+        cin>>s[i];
+    }
+    for(int i=0; i<n; i++){
+        sort(s[i].begin(), s[i].end());
+        do{
+            cout<<s[i]<<" ";
+        }while(next_permutation(s[i].begin(), s[i].end()));
+        cout<<endl;
+    }
+}

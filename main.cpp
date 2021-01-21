@@ -45,9 +45,11 @@ int main() {
 //    int r = geeksforgeeks::maxSubarraySum(arr, n);
 
 
-    vector<int> arr = {1,2,3,4,5,6,7,8,10};
-    int n = 10;
-    int r = geeksforgeeks::missingNumber(arr, n);
+//    vector<int> arr = {1,2,3,4,5,6,7,8,10};
+//    int n = 10;
+//    int r = geeksforgeeks::missingNumber(arr, n);
+
+
     /***
      * String
      */
@@ -55,7 +57,11 @@ int main() {
 //    string S = "i.like.this";
 //    string r = geeksforgeeks::reverseWords(S);
 
-    std::cout << r <<std::endl;
+    geeksforgeeks::permutationsStrs();
+
+
+//    std::cout << r <<std::endl;
+
 
     return 0;
 }
