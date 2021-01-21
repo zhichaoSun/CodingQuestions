@@ -73,6 +73,17 @@ int geeksforgeeks::maxSubarraySum(int *arr, int n) {
         max = std::max(max, localMax);
     }
     return max;
+    
+}
+
+int geeksforgeeks::missingNumber(vector<int> &array, int n) {
+    int s = (1+n)*n/2;
+    int i = 0;
+    while(i<n-1) {
+        s-=array[i];
+        i++;
+    }
+    return s;
 }
 
 /***

@@ -40,10 +40,14 @@ int main() {
 //    int r = geeksforgeeks::triplets(arr, n);
 
 
-    int arr[] = {-2,1,-3};
-    int n = 3;
-    int r = geeksforgeeks::maxSubarraySum(arr, n);
+//    int arr[] = {-2,1,-3};
+//    int n = 3;
+//    int r = geeksforgeeks::maxSubarraySum(arr, n);
 
+
+    vector<int> arr = {1,2,3,4,5,6,7,8,10};
+    int n = 10;
+    int r = geeksforgeeks::missingNumber(arr, n);
     /***
      * String
      */
