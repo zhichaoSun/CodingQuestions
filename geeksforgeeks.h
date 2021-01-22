@@ -1,5 +1,5 @@
 //
-// Created by zhich on 20 Jan 2021.
+// Created by zhichao on 20 Jan 2021.
 //
 
 #ifndef C__PLAYGROUND_GEEKSFORGEEKS_H
@@ -19,10 +19,9 @@ public:
     static int missingNumber(vector<int>& array, int n);
 
     static string reverseWords(string S);
-    static void permutationsStrs();
-    static void longestPalindrome();
-    static string removeAdjacentDuplicates(string );
-    static void recursivelyRemoveAllAdjacentDuplicates();
+    static vector<string> permutationsStrs(string s);
+    static string longestPalindrome(string s);
+    static string removeAdjacentDuplicates(string s);
 
 
 };

@@ -1,5 +1,5 @@
 //
-// Created by zhich on 20 Jan 2021.
+// Created by zhichao on 20 Jan 2021.
 //
 
 #ifndef C__PLAYGROUND_ALGOEXPERT_H
