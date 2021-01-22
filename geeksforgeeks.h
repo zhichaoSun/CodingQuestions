@@ -21,6 +21,7 @@ public:
 
     static string reverseWords(string S);
     static void permutationsStrs();
+    static void longestPalindrome();
 
 
 };

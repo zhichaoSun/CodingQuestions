@@ -57,7 +57,11 @@ int main() {
 //    string S = "i.like.this";
 //    string r = geeksforgeeks::reverseWords(S);
 
-    geeksforgeeks::permutationsStrs();
+
+//    geeksforgeeks::permutationsStrs();
+
+
+    geeksforgeeks::longestPalindrome();
 
 
 //    std::cout << r <<std::endl;

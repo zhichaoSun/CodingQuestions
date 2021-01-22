@@ -119,3 +119,28 @@ void geeksforgeeks::permutationsStrs() {
         cout<<endl;
     }
 }
+
+void geeksforgeeks::longestPalindrome() { //cannot pass all the TCs, some TCs dont even give a N number..
+    int n;
+    cin>>n;
+
+    string longest;
+
+    while(n--){
+        string str;
+        string strR;
+        cin>>str;
+        int l=str.size();
+        for(int i=0; i<l; i++){
+            string subStr;
+            for(int j=i; j<l; j++) {
+                subStr+=str[j];
+                strR=subStr;
+                std::reverse(strR.begin(), strR.end());
+                if(subStr==strR and strR.size() > longest.size())
+                    longest=strR;
+            }
+        }
+    }
+    cout<<longest;
+}
