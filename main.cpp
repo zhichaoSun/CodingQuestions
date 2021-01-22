@@ -61,8 +61,10 @@ int main() {
 //    geeksforgeeks::permutationsStrs();
 
 
-    geeksforgeeks::longestPalindrome();
+//    geeksforgeeks::longestPalindrome();
 
+
+    geeksforgeeks::recursivelyRemoveAllAdjacentDuplicates();
 
 //    std::cout << r <<std::endl;
 

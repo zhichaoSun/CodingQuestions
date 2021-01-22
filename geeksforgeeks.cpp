@@ -144,3 +144,33 @@ void geeksforgeeks::longestPalindrome() { //cannot pass all the TCs, some TCs do
     }
     cout<<longest;
 }
+
+string geeksforgeeks::removeAdjacentDuplicates(string s) {
+    string result;
+    for(int i=0; i<s.size(); i++){
+        if(s[i]!=s[i-1] and s[i]!=s[i+1]){
+            result+=s[i];
+        }
+    }
+    return result;
+}
+void geeksforgeeks::recursivelyRemoveAllAdjacentDuplicates() {
+    int n=1;
+    cin>>n;
+
+    string inputs[n]={};
+
+    for(int i=0; i<n; i++){
+        cin>>inputs[i];
+    }
+
+    for(int i=0; i<n; i++){
+        while(inputs[i]!=removeAdjacentDuplicates(inputs[i])){
+            inputs[i]=removeAdjacentDuplicates(inputs[i]);
+        }
+    }
+
+    for(int k=0; k<n; k++){
+        cout<<inputs[k]<<endl;
+    }
+}

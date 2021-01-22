@@ -10,7 +10,6 @@
 
 using namespace std;
 
-
 class geeksforgeeks {
 public:
 
@@ -22,6 +21,8 @@ public:
     static string reverseWords(string S);
     static void permutationsStrs();
     static void longestPalindrome();
+    static string removeAdjacentDuplicates(string );
+    static void recursivelyRemoveAllAdjacentDuplicates();
 
 
 };
