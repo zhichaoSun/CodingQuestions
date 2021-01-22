@@ -6,6 +6,6 @@ Coding question websites:
 * **[AlgoExpert](https://www.algoexpert.io/questions)**
 ---
 
-_May not be the optimum solutions but all got accepted._
+_May not be the optimum solutions._
   
   
