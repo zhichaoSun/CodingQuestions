@@ -18,6 +18,7 @@ public:
     static int maxSubarraySum(int arr[], int n);
     static int missingNumber(vector<int>& array, int n);
 
+    static bool rotateString(string s1, string s2);
     static string reverseWords(string S);
     static vector<string> permutationsStrs(string s);
     static string longestPalindrome(string s);

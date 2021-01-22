@@ -70,6 +70,10 @@ int main() {
      * String
      **********************************************/
 
+    bool r = geeksforgeeks::rotateString("", "");
+    cout<<r;
+
+
     /***
      * Reverse the string
      */
