@@ -259,8 +259,9 @@ public:
 };
 
 void geeksforgeeks::printLinkedList(Node *n) {
+    int count = 0;
     while (n != nullptr) {
-        cout << n->data << endl;
+        cout << ++count << ": " << n->data << endl;
         n = n->next;
     }
 }
