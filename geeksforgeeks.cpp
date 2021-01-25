@@ -282,7 +282,9 @@ void geeksforgeeks::linkedListHandler() {
 
         // call method below
 //        geeksforgeeks::printLinkedList(head);
-        geeksforgeeks::printMiddle(head);
+//        geeksforgeeks::printMiddle(head);
+        geeksforgeeks::printMiddle2(head);
+
     }
 }
 
@@ -293,6 +295,7 @@ void geeksforgeeks::printLinkedList(Node * n) {
         n = n->next;
     }
 }
+
 
 /***
  * Given a singly linked list of N nodes.
@@ -308,7 +311,7 @@ void geeksforgeeks::printMiddle(Node * head) {
 
     Node* n = head;
     int count=0;
-    while(n!=NULL) {
+    while(n!=nullptr) {
         count++;
         n=n->next;
     }
@@ -319,6 +322,22 @@ void geeksforgeeks::printMiddle(Node * head) {
         head = head->next;
     }
     cout << mid;
+}
+/***
+ * Another interesting way to find middle element
+ * @param Node * head
+ */
+void geeksforgeeks::printMiddle2(Node * head) {
+
+    Node * fast = head;
+    Node * slow = head;
+    for(; fast->next!=nullptr && fast->next->next!=nullptr; fast=fast->next->next, slow=slow->next) {}
+
+    if(fast->next)
+        cout << slow->next->data << endl;
+    else
+        cout << slow->data << endl;
+
 }
 
 
