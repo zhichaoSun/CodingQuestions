@@ -18,6 +18,7 @@ vector<string> getSystemInput() {
     return inputs;
 }
 
+
 int main() {
 
     /************************************************************************************
@@ -136,7 +137,8 @@ int main() {
     /**********************************************
      * Linked List
      **********************************************/
-    geeksforgeeks::linkedList();
+
+    geeksforgeeks::linkedListHandler();
 
     return 0;
 }

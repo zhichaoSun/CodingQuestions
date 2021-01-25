@@ -18,6 +18,7 @@ public:
     static int maxSubarraySum(int arr[], int n);
     static int missingNumber(vector<int>& array, int n);
 
+
     static bool rotateString(string s1, string s2);
     static int romanToDecimal(string str);
     static string reverseWords(string S);
@@ -25,9 +26,10 @@ public:
     static string longestPalindrome(string s);
     static string removeAdjacentDuplicates(string s);
 
-    static void linkedList();
+
     class Node;
-    static void printLinkedList(Node *n);
+    static void linkedListHandler();
+    static void printLinkedList(Node * n);
 
 
 };

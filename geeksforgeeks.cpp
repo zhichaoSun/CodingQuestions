@@ -256,35 +256,41 @@ class geeksforgeeks::Node {
 public:
     int data;
     Node * next;
+    explicit Node(int x) {
+        data = x;
+        next = NULL;
+    }
 };
 
-void geeksforgeeks::printLinkedList(Node *n) {
+void geeksforgeeks::linkedListHandler() {
+    int t; // amount of test cases
+    cin>>t;
+    while(t--){
+        int n; // number of data of this very test cases
+        cin>>n;
+
+        int data; // data
+        cin>>data;
+
+        Node *head = new Node(data); // head
+        Node *tail = head;  // copy head to a tail
+        for(int i=0; i<n-1; i++) {
+            cin>>data;
+            tail->next = new Node(data);
+            tail = tail->next;
+        }
+
+        // call method below
+        geeksforgeeks::printLinkedList(head);
+    }
+}
+
+void geeksforgeeks::printLinkedList(Node * n) {
     int count = 0;
     while (n != nullptr) {
         cout << ++count << ": " << n->data << endl;
         n = n->next;
     }
-}
-
-void geeksforgeeks::linkedList() {
-
-    Node *head = nullptr;
-    Node *second = nullptr;
-    Node *third = nullptr;
-
-    head = new Node();
-    second = new Node();
-    third = new Node();
-
-    head->data = 1;
-    head->next = second;
-
-    second->data = 11;
-    second->next = third;
-
-    third->data = 111;
-
-    printLinkedList(head);
 }
 
 
