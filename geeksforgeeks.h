@@ -25,6 +25,10 @@ public:
     static string longestPalindrome(string s);
     static string removeAdjacentDuplicates(string s);
 
+    static void linkedList();
+    class Node;
+    static void printLinkedList(Node *n);
+
 
 };
 

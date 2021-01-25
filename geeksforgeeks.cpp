@@ -133,7 +133,7 @@ bool geeksforgeeks::rotateString(string s1, string s2) {
         return s1==s2;
 
     s1+=s1;
-    return s1.find(s2) == 2 or s1.find(s2) == s2.length() - 2;
+    return s1.find(s2) == 2 || s1.find(s2) == s2.length() - 2;
 }
 
 
@@ -181,7 +181,7 @@ string geeksforgeeks::reverseWords(string S) {
     string word;
     int n = S.size();
     for(int i=0; i<=n; i++){
-        if(S[i]=='.' or i==n){
+        if(S[i]=='.' || i==n){
             result = result.empty() ? word+result : word+'.'+result;
             word="";
         }
@@ -224,7 +224,7 @@ string geeksforgeeks::longestPalindrome(string str) {
             subStr+=str[j];
             strR=subStr;
             std::reverse(strR.begin(), strR.end());
-            if(subStr==strR and strR.size() > longest.size())
+            if(subStr==strR && strR.size() > longest.size())
                 longest=strR;
         }
     }
@@ -240,9 +240,66 @@ string geeksforgeeks::longestPalindrome(string str) {
 string geeksforgeeks::removeAdjacentDuplicates(string s) {
     string result;
     for(int i=0; i<s.size(); i++){
-        if(s[i]!=s[i-1] and s[i]!=s[i+1]){
+        if(s[i]!=s[i-1] && s[i]!=s[i+1]){
             result+=s[i];
         }
     }
     return result;
 }
+
+
+/**********************************************
+ * Linked List
+ **********************************************/
+
+class geeksforgeeks::Node {
+public:
+    int data;
+    Node * next;
+};
+
+void geeksforgeeks::printLinkedList(Node *n) {
+    while (n != nullptr) {
+        cout << n->data << endl;
+        n = n->next;
+    }
+}
+
+void geeksforgeeks::linkedList() {
+
+    Node *head = nullptr;
+    Node *second = nullptr;
+    Node *third = nullptr;
+
+    head = new Node();
+    second = new Node();
+    third = new Node();
+
+    head->data = 1;
+    head->next = second;
+
+    second->data = 11;
+    second->next = third;
+
+    third->data = 111;
+
+    printLinkedList(head);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

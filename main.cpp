@@ -80,8 +80,8 @@ int main() {
     /***
      * convert Roman number to decimal
      */
-    int r = geeksforgeeks::romanToDecimal("MMMCMXCIX");
-    cout<<r;
+//    int r = geeksforgeeks::romanToDecimal("MMMCMXCIX");
+//    cout<<r;
 
 
     /***
@@ -130,6 +130,13 @@ int main() {
 //    for(string &input : inputs){
 //        cout<<input<<endl;
 //    }
+
+
+
+    /**********************************************
+     * Linked List
+     **********************************************/
+    geeksforgeeks::linkedList();
 
     return 0;
 }
