@@ -7,6 +7,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <map>
 
 using namespace std;
 
@@ -133,6 +134,40 @@ bool geeksforgeeks::rotateString(string s1, string s2) {
 
     s1+=s1;
     return s1.find(s2) == 2 or s1.find(s2) == s2.length() - 2;
+}
+
+
+/***
+ * Given a string in roman no format (s)  your task is to convert it to an integer.
+ * Various symbols and their values are given below.
+ * I 1
+ * V 5
+ * X 10
+ * L 50
+ * C 100
+ * D 500
+ * M 1000
+ * @param std::string RomanNumber
+ * @return int devcimalResult
+ */
+int geeksforgeeks::romanToDecimal(string str) {
+    map<char, int> d;
+    d['I'] = 1;
+    d['V'] = 5;
+    d['X'] = 10;
+    d['L'] = 50;
+    d['C'] = 100;
+    d['D'] = 500;
+    d['M'] = 1000;
+
+    int decimal=0;
+    for(int i=0; i<str.size(); i++) {
+        if(d[str[i]] < d[str[i+1]])
+            decimal-=d[str[i]];
+        else
+            decimal+=d[str[i]];
+    }
+    return decimal;
 }
 
 

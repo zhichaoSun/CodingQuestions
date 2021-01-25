@@ -70,7 +70,17 @@ int main() {
      * String
      **********************************************/
 
-    bool r = geeksforgeeks::rotateString("", "");
+    /***
+     * check if 2 strings can be rotated to become the other one
+     */
+//    bool r = geeksforgeeks::rotateString("", "");
+//    cout<<r;
+
+
+    /***
+     * convert Roman number to decimal
+     */
+    int r = geeksforgeeks::romanToDecimal("MMMCMXCIX");
     cout<<r;
 
 
