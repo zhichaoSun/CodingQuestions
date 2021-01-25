@@ -281,7 +281,8 @@ void geeksforgeeks::linkedListHandler() {
         }
 
         // call method below
-        geeksforgeeks::printLinkedList(head);
+//        geeksforgeeks::printLinkedList(head);
+        geeksforgeeks::printMiddle(head);
     }
 }
 
@@ -291,6 +292,33 @@ void geeksforgeeks::printLinkedList(Node * n) {
         cout << ++count << ": " << n->data << endl;
         n = n->next;
     }
+}
+
+/***
+ * Given a singly linked list of N nodes.
+ * The task is to find the middle of the linked list.
+ * For example, if given linked list is 1->2->3->4->5 then the output should be 3.
+ *
+ * If there are even nodes, then there would be two middle nodes,
+ * we need to print the second middle element.
+ * For example, if given linked list is 1->2->3->4->5->6 then the output should be 4.
+ * @param Node * head
+ */
+void geeksforgeeks::printMiddle(Node * head) {
+
+    Node* n = head;
+    int count=0;
+    while(n!=NULL) {
+        count++;
+        n=n->next;
+    }
+    int midIndex = (count/2)+1;
+    int mid = 0;
+    while(midIndex--) {
+        mid = head->data;
+        head = head->next;
+    }
+    cout << mid;
 }
 
 

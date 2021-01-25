@@ -30,6 +30,7 @@ public:
     class Node;
     static void linkedListHandler();
     static void printLinkedList(Node * n);
+    static void printMiddle(Node * n);
 
 
 };
