@@ -403,6 +403,52 @@ int geeksforgeeks::minOperation(int n) {
     return count;
 }
 
+/***
+ * You are given N pairs of numbers. In every pair, the first number is always smaller than the second number.
+ * A pair (c, d) can follow another pair (a, b) if b < c.
+ * Chain of pairs can be formed in this fashion.
+ * You have to find the longest chain which can be formed from the given set of pairs.
+ * @param struct Pair*: given pair array
+ * @param int: length of the array
+ * @return int: max chain length
+ */
+
+struct geeksforgeeks::Pair {
+    int first;
+    int second;
+};
+
+int geeksforgeeks::maxChainLen(struct Pair *p, int n) {
+
+    for(int i=0; i<n; i++) {
+        for(int j=i+1; j<n; j++) {
+            if(p[j].second < p[i].second) {
+                Pair temp = p[i];
+                p[i] = p[j];
+                p[j] = temp;
+            }
+        }
+    }
+
+    int gl = 1;
+    for(int i=0; i<n; i++) {
+        int ll = 1;
+        int j=i;
+        int k=1;
+        while(j+k<n) {
+            if(p[j].second<p[j+k].first){
+                ll++;
+                j=j+k;
+                k=1;
+            } else k++;
+        }
+        gl=max(gl,ll);
+
+    }
+
+    return gl;
+}
+
 
 
 

@@ -37,6 +37,10 @@ public:
 
 
     static int minOperation(int n);
+
+    struct Pair;
+    static Pair *sortBySecond(struct Pair p[], int n);
+    static int maxChainLen(struct Pair p[],int n);
 };
 
 

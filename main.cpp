@@ -148,12 +148,13 @@ int main() {
     /***
      * find the minimum number of operations from 0 to N
      */
-    vector<string> inputs = getSystemInput();
-    for(string & input : inputs){
-        int r = geeksforgeeks::minOperation(stoi(input));
-        cout<<r<<endl;
-    }
+//    vector<string> inputs = getSystemInput();
+//    for(string & input : inputs){
+//        int r = geeksforgeeks::minOperation(stoi(input));
+//        cout<<r<<endl;
+//    }
 
+    geeksforgeeks::maxChainLen({}, 0);
 
     return 0;
 }
