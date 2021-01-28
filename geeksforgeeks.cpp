@@ -284,8 +284,8 @@ void geeksforgeeks::linkedListHandler() {
 //        geeksforgeeks::printLinkedList(head);
 //        geeksforgeeks::printMiddle(head);
 //        geeksforgeeks::printMiddle2(head);
-        geeksforgeeks::reverseLinkedList(head);
-
+//        geeksforgeeks::reverseLinkedList(head);
+        geeksforgeeks::reverseLinkedList2(head);
     }
 }
 
@@ -363,6 +363,21 @@ geeksforgeeks::Node * geeksforgeeks::reverseLinkedList(Node *head) {
     }
 
     return newNode;
+}
+
+geeksforgeeks::Node * geeksforgeeks::reverseLinkedList2(Node *head) {
+
+    Node * tail = head;
+    Node * newHead = tail;
+    while(tail->next!=NULL) {
+        Node * prevNewHead = newHead;
+        newHead = tail->next;
+        Node * temp = newHead;
+        tail->next = temp->next;
+        newHead->next = prevNewHead;
+    }
+
+    return newHead;
 }
 
 
