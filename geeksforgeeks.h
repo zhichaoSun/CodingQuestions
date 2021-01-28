@@ -36,6 +36,7 @@ public:
     static Node * reverseLinkedList2(Node * n);
 
 
+    static int minOperation(int n);
 };
 
 

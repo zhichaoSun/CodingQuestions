@@ -138,7 +138,27 @@ int main() {
      * Linked List
      **********************************************/
 
-    geeksforgeeks::linkedListHandler();
+//    geeksforgeeks::linkedListHandler();
+
+    /**********************************************
+     * Dynamic Programming
+     **********************************************/
+
+
+    /***
+     * find the minimum number of operations from 0 to N
+     */
+    vector<string> inputs = getSystemInput();
+    for(string & input : inputs){
+        int r = geeksforgeeks::minOperation(stoi(input));
+        cout<<r<<endl;
+    }
+
 
     return 0;
 }
+
+
+
+
+
