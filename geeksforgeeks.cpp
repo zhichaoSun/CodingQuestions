@@ -283,14 +283,15 @@ void geeksforgeeks::linkedListHandler() {
         // call method below
 //        geeksforgeeks::printLinkedList(head);
 //        geeksforgeeks::printMiddle(head);
-        geeksforgeeks::printMiddle2(head);
+//        geeksforgeeks::printMiddle2(head);
+        geeksforgeeks::reverseLinkedList(head);
 
     }
 }
 
 void geeksforgeeks::printLinkedList(Node * n) {
     int count = 0;
-    while (n != nullptr) {
+    while (n != NULL) {
         cout << ++count << ": " << n->data << endl;
         n = n->next;
     }
@@ -311,7 +312,7 @@ void geeksforgeeks::printMiddle(Node * head) {
 
     Node* n = head;
     int count=0;
-    while(n!=nullptr) {
+    while(n!=NULL) {
         count++;
         n=n->next;
     }
@@ -331,7 +332,7 @@ void geeksforgeeks::printMiddle2(Node * head) {
 
     Node * fast = head;
     Node * slow = head;
-    for(; fast->next!=nullptr && fast->next->next!=nullptr; fast=fast->next->next, slow=slow->next) {}
+    for(; fast->next!=NULL && fast->next->next!=NULL; fast=fast->next->next, slow=slow->next) {}
 
     if(fast->next)
         cout << slow->next->data << endl;
@@ -339,6 +340,31 @@ void geeksforgeeks::printMiddle2(Node * head) {
         cout << slow->data << endl;
 
 }
+
+geeksforgeeks::Node * geeksforgeeks::reverseLinkedList(Node *head) {
+    if(head->next==NULL) return head;
+
+    int count=0;
+    vector<int> addr;
+
+    do {
+        addr.push_back(head->data);
+        head=head->next;
+        count++;
+    } while (head->next!=NULL);
+    addr.push_back(head->data);
+    count++;
+
+    Node *newNode = new Node(addr[--count]);
+    Node *tail = newNode;
+    while(count) {
+        tail->next=new Node(addr[--count]);
+        tail=tail->next;
+    }
+
+    return newNode;
+}
+
 
 
 

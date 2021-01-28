@@ -32,6 +32,7 @@ public:
     static void printLinkedList(Node * n);
     static void printMiddle(Node * n);
     static void printMiddle2(Node * n);
+    static Node * reverseLinkedList(Node * n);
 
 
 };
