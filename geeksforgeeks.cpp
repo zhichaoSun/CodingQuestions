@@ -420,6 +420,7 @@ struct geeksforgeeks::Pair {
 
 int geeksforgeeks::maxChainLen(struct Pair *p, int n) {
 
+    //    static Pair *sortBySecond(struct Pair p[], int n);
     for(int i=0; i<n; i++) {
         for(int j=i+1; j<n; j++) {
             if(p[j].second < p[i].second) {
