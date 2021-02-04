@@ -374,17 +374,17 @@ geeksforgeeks::Node * geeksforgeeks::reverseLinkedList(Node *head) {
 
 geeksforgeeks::Node * geeksforgeeks::reverseLinkedList2(Node *head) {
 
-    Node * tail = head;
-    Node * newHead = tail;
-    while(tail->next!=NULL) {
-        Node * prevNewHead = newHead;
-        newHead = tail->next;
-        Node * temp = newHead;
-        tail->next = temp->next;
-        newHead->next = prevNewHead;
-    }
+    Node * current = head;
+    Node * prev = NULL;
+    Node * next = NULL;
 
-    return newHead;
+    while(current!=NULL) {
+        next=current->next;
+        current->next=prev;
+        prev=current;
+        current=next;
+    }
+    return prev;
 }
 
 /***
