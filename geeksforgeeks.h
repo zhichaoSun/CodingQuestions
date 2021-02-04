@@ -34,10 +34,11 @@ public:
     static void printMiddle2(Node * n);
     static Node * reverseLinkedList(Node * n);
     static Node * reverseLinkedList2(Node * n);
+    struct Node * reverseBySize (Node *head, int k);
+    static Node* rotate(Node * n, int k);
 
 
     static int minOperation(int n);
-
     struct Pair;
     static int maxChainLen(struct Pair p[],int n);
 };

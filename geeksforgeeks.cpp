@@ -286,6 +286,8 @@ void geeksforgeeks::linkedListHandler() {
 //        geeksforgeeks::printMiddle2(head);
 //        geeksforgeeks::reverseLinkedList(head);
 //        geeksforgeeks::reverseLinkedList2(head);
+        Node * test = geeksforgeeks::rotate(head, 3);
+        geeksforgeeks::printLinkedList(test);
     }
 }
 
@@ -341,6 +343,11 @@ void geeksforgeeks::printMiddle2(Node * head) {
 
 }
 
+/***
+ * Reverse the given linked list
+ * @param linked list head Node * head
+ * @return reversed linked list head Node * newNode
+ */
 geeksforgeeks::Node * geeksforgeeks::reverseLinkedList(Node *head) {
     if(head->next==NULL) return head;
 
@@ -378,6 +385,38 @@ geeksforgeeks::Node * geeksforgeeks::reverseLinkedList2(Node *head) {
     }
 
     return newHead;
+}
+
+/***
+ * Given a singly linked list of size N.
+ * The task is to rotate the linked list counter-clockwise by k nodes,
+ * where k is a given positive integer smaller than or equal to length of the linked list.
+ * @param linked list head Node * head
+ * @param where to rotate int k
+ * @return rotated liked list head Node * result
+ */
+geeksforgeeks::Node * geeksforgeeks::rotate(Node *head, int k) {
+
+    Node * flag = head;
+    int i = 0;
+
+    while(i<k-1) {
+        flag = flag->next;
+        i++;
+    }
+    if(flag->next==NULL)
+        return head;
+    else {
+        Node * flag2 = flag->next;
+        Node * result = flag2;
+        flag->next=NULL;
+        while(flag2->next!=NULL) {
+            flag2=flag2->next;
+        }
+        flag2->next=head;
+
+        return result;
+    }
 }
 
 
@@ -449,6 +488,7 @@ int geeksforgeeks::maxChainLen(struct Pair *p, int n) {
 
     return gl;
 }
+
 
 
 

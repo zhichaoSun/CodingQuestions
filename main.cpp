@@ -138,7 +138,7 @@ int main() {
      * Linked List
      **********************************************/
 
-//    geeksforgeeks::linkedListHandler();
+    geeksforgeeks::linkedListHandler();
 
     /**********************************************
      * Dynamic Programming
@@ -154,7 +154,7 @@ int main() {
 //        cout<<r<<endl;
 //    }
 
-    geeksforgeeks::maxChainLen({}, 0);
+//    geeksforgeeks::maxChainLen({}, 0);
 
     return 0;
 }
