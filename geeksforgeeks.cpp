@@ -286,8 +286,9 @@ void geeksforgeeks::linkedListHandler() {
 //        geeksforgeeks::printMiddle2(head);
 //        geeksforgeeks::reverseLinkedList(head);
 //        geeksforgeeks::reverseLinkedList2(head);
-        Node * test = geeksforgeeks::rotate(head, 3);
-        geeksforgeeks::printLinkedList(test);
+//        geeksforgeeks::printLinkedList(geeksforgeeks::reverseLinkedList2(head));
+//        geeksforgeeks::printLinkedList(geeksforgeeks::rotate(head, 3));
+        geeksforgeeks::printLinkedList(geeksforgeeks::reverseBySize(head, 3));
     }
 }
 
@@ -384,6 +385,38 @@ geeksforgeeks::Node * geeksforgeeks::reverseLinkedList2(Node *head) {
         prev=current;
         current=next;
     }
+    return prev;
+}
+
+
+/***
+ * Reverse a Linked List in groups of given size:
+ * Given a linked list of size N.
+ * The task is to reverse every k nodes (where k is an input to the function) in the linked list.
+ * eg:
+ *   Input:
+ *   LinkedList: 1->2->2->4->5->6->7->8
+ *   K = 4
+ *   Output: 4 2 2 1 8 7 6 5
+ * @param head
+ * @param k
+ * @return
+ */
+geeksforgeeks::Node * geeksforgeeks::reverseBySize(Node *head, int k) {
+    Node * current = head;
+    Node * prev = NULL;
+    Node * next = NULL;
+    int i=0;
+    while(current!=NULL && i<k) {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+        i++;
+    }
+    if(next!=NULL)
+        head->next = reverseBySize(next, k);
+
     return prev;
 }
 
