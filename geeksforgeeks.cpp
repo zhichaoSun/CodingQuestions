@@ -453,6 +453,40 @@ geeksforgeeks::Node * geeksforgeeks::rotate(Node *head, int k) {
 }
 
 
+/***
+ * Given two singly linked lists of size N and M,
+ * write a program to get the point where two linked lists intersect each other.
+ * eg:
+ *   Input:
+ *      LinkList1 = 3->6->9->common
+ *      LinkList2 = 10->common
+ *      common = 15->30->NULL
+ *   Output: 15
+ * @param Node * head1
+ * @param Node * head2
+ * @return -1 or common.data
+ */
+int geeksforgeeks::intersectPoint(Node *head1, Node *head2) {
+    int result = -1;
+    vector<Node*> head1Addr;
+    while(head1!=NULL) {
+        head1Addr.push_back(head1);
+        head1 = head1->next;
+    }
+    while (head2!=NULL) {
+        for(int i=0;i<head1Addr.size();i++) {
+            if(head2==head1Addr[i])  {
+                result = head2->data;
+                i=head1Addr.size();
+            }
+        }
+        if(result!=-1) break;
+        else head2=head2->next;
+    }
+    return result;
+}
+
+
 /**********************************************
  * Dynamic Programming
  **********************************************/

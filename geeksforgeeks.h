@@ -36,6 +36,7 @@ public:
     static Node * reverseLinkedList2(Node * n);
     static Node * reverseBySize (Node *head, int k);
     static Node* rotate(Node * n, int k);
+    int intersectPoint(Node* head1, Node* head2);
 
 
     static int minOperation(int n);
