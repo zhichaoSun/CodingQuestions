@@ -294,7 +294,7 @@ void geeksforgeeks::linkedListHandler() {
 
 void geeksforgeeks::printLinkedList(Node * n) {
     int count = 0;
-    while (n != NULL) {
+    while (n) {
         cout << ++count << ": " << n->data << endl;
         n = n->next;
     }
@@ -315,7 +315,7 @@ void geeksforgeeks::printMiddle(Node * head) {
 
     Node* n = head;
     int count=0;
-    while(n!=NULL) {
+    while(n) {
         count++;
         n=n->next;
     }
@@ -335,7 +335,7 @@ void geeksforgeeks::printMiddle2(Node * head) {
 
     Node * fast = head;
     Node * slow = head;
-    for(; fast->next!=NULL && fast->next->next!=NULL; fast=fast->next->next, slow=slow->next) {}
+    for(; fast->next && fast->next->next; fast=fast->next->next, slow=slow->next) {}
 
     if(fast->next)
         cout << slow->next->data << endl;
@@ -350,7 +350,7 @@ void geeksforgeeks::printMiddle2(Node * head) {
  * @return reversed linked list head Node * newNode
  */
 geeksforgeeks::Node * geeksforgeeks::reverseLinkedList(Node *head) {
-    if(head->next==NULL) return head;
+    if(head->next) return head;
 
     int count=0;
     vector<int> addr;
@@ -359,7 +359,7 @@ geeksforgeeks::Node * geeksforgeeks::reverseLinkedList(Node *head) {
         addr.push_back(head->data);
         head=head->next;
         count++;
-    } while (head->next!=NULL);
+    } while (head->next);
     addr.push_back(head->data);
     count++;
 
@@ -379,7 +379,7 @@ geeksforgeeks::Node * geeksforgeeks::reverseLinkedList2(Node *head) {
     Node * prev = NULL;
     Node * next = NULL;
 
-    while(current!=NULL) {
+    while(current) {
         next=current->next;
         current->next=prev;
         prev=current;
@@ -407,14 +407,14 @@ geeksforgeeks::Node * geeksforgeeks::reverseBySize(Node *head, int k) {
     Node * prev = NULL;
     Node * next = NULL;
     int i=0;
-    while(current!=NULL && i<k) {
+    while(current && i<k) {
         next = current->next;
         current->next = prev;
         prev = current;
         current = next;
         i++;
     }
-    if(next!=NULL)
+    if(next)
         head->next = reverseBySize(next, k);
 
     return prev;
@@ -443,7 +443,7 @@ geeksforgeeks::Node * geeksforgeeks::rotate(Node *head, int k) {
         Node * flag2 = flag->next;
         Node * result = flag2;
         flag->next=NULL;
-        while(flag2->next!=NULL) {
+        while(flag2->next) {
             flag2=flag2->next;
         }
         flag2->next=head;
@@ -469,11 +469,11 @@ geeksforgeeks::Node * geeksforgeeks::rotate(Node *head, int k) {
 int geeksforgeeks::intersectPoint(Node *head1, Node *head2) {
     int result = -1;
     vector<Node*> head1Addr;
-    while(head1!=NULL) {
+    while(head1) {
         head1Addr.push_back(head1);
         head1 = head1->next;
     }
-    while (head2!=NULL) {
+    while (head2) {
         for(int i=0;i<head1Addr.size();i++) {
             if(head2==head1Addr[i])  {
                 result = head2->data;
@@ -508,6 +508,27 @@ int geeksforgeeks::intersectPoint2(Node *head1, Node *head2) {
         head2=head2->next;
     }
     return result;
+}
+
+
+/***
+ * Given a linked list of N nodes.
+ * The task is to check if the the linked list has a loop. Linked list can contain self loop.
+ * @param Node * head
+ * @return true/false
+ */
+bool geeksforgeeks::detectLoop(Node *head) {
+    Node * fast = head;
+    Node * slow = head;
+
+    while(slow && fast && fast->next) {
+        slow=slow->next;
+        fast=fast->next->next;
+        if(fast==slow) {
+            return true;
+        }
+    }
+    return false;
 }
 
 

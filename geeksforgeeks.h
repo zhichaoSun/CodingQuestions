@@ -39,6 +39,7 @@ public:
     int intersectPoint(Node* head1, Node* head2);
     int countLLlength(Node* head1);
     int intersectPoint2(Node* head1, Node* head2);
+    bool detectLoop(Node* head);
 
 
     static int minOperation(int n);
