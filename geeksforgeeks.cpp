@@ -487,6 +487,31 @@ int geeksforgeeks::intersectPoint(Node *head1, Node *head2) {
 }
 
 
+int geeksforgeeks::countLLlength(Node* head) {
+    int count = 0;
+    while(head) { head=head->next; count++;}
+    return count;
+}
+int geeksforgeeks::intersectPoint2(Node *head1, Node *head2) {
+    int head1Lengh = countLLlength(head1);
+    int head2Lengh = countLLlength(head2);
+
+    int d = head1Lengh - head2Lengh;
+
+    if(d>0) { while(d--) head1=head1->next;}
+    else if(d<0) { while(d++) head2=head2->next;}
+
+    int result = -1;
+    while(head1) {
+        if(head1==head2) { result = head1->data; break;}
+        head1=head1->next;
+        head2=head2->next;
+    }
+    return result;
+}
+
+
+
 /**********************************************
  * Dynamic Programming
  **********************************************/

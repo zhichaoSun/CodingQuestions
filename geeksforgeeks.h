@@ -37,6 +37,8 @@ public:
     static Node * reverseBySize (Node *head, int k);
     static Node* rotate(Node * n, int k);
     int intersectPoint(Node* head1, Node* head2);
+    int countLLlength(Node* head1);
+    int intersectPoint2(Node* head1, Node* head2);
 
 
     static int minOperation(int n);
