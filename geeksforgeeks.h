@@ -45,6 +45,8 @@ public:
     static int minOperation(int n);
     struct Pair;
     static int maxChainLen(struct Pair p[],int n);
+
+    static int binarySearch(int arr[], int left, int right, int k);
 };
 
 

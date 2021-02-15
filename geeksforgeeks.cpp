@@ -532,6 +532,27 @@ bool geeksforgeeks::detectLoop(Node *head) {
 }
 
 
+/**********************************************
+ * Search and Sort
+ **********************************************/
+
+/***
+ *
+ * Binary Search (recursively)
+ *
+ * @param arr: sorted array
+ * @param n: array length
+ * @param k: target element
+ * @return target index+1
+ */
+int geeksforgeeks::binarySearch(int *arr, int left, int right, int k) {
+    if(left > right) return -1;
+    int i = (right+left)/2;
+    if(arr[i] == k) return i;
+    else if(arr[i] < k) return binarySearch(arr, i+1, right, k);
+    else if(arr[i] > k) return binarySearch(arr, left, i-1, k);
+}
+
 
 /**********************************************
  * Dynamic Programming

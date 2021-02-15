@@ -138,7 +138,15 @@ int main() {
      * Linked List
      **********************************************/
 
-    geeksforgeeks::linkedListHandler();
+//    geeksforgeeks::linkedListHandler();
+
+    /**********************************************
+     * Search and Sort
+     **********************************************/
+
+    int arr[14] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 124, 155, 1252};
+    int ans = geeksforgeeks::binarySearch(arr, 0, 13, 1252);
+    cout << ans << endl;
 
     /**********************************************
      * Dynamic Programming
